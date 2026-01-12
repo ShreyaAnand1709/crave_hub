@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH-Home</title>
+    
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>CraveHub</h1>
+            <h2>We deliver happiness,<br>
+                <span>not just food</span>
+            </h2>
+            <p>Order your favourite meals anytime, anywhere with seameless experience.</p>
+
+            <div class="btn-group">
+                <a href = "open_signup" class="btn primary">SIGNUP</a><br>
+                <a href="open_signin" class="btn secondary">SIGN IN</a><br><br>
+            </div>
+        </div>
+
+        <div class="right">
+            <img src="{% static 'pictures/chief-removebg-preview.png' %}" alt="Chief">
+        </div>
+    </div>
+    
+</body>
+</html>

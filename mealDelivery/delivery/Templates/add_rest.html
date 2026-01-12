@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH-A-AR</title>
+    <link rel="stylesheet" href="{% static 'addReststyle.css' %}?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero">
+        <!-- <-------- Name of the app ------> 
+        <div class="heading">
+            <h1>CraveHub</h1>
+            <h3>Restaurants Details</h3>       
+        </div>
+        <!-- --------------lower section of app for sign in---------------- -->
+        <div class="body">
+            <!-- ------------------ first image ------------------- -->
+             <div class="chief1">
+                <img src= "{%static 'pictures/signUpLeft.png' %}">
+                <div class="caption1">
+                    Oops! Your not in our list
+                </div>
+             </div>
+
+             <!-- --------------------- form -------------------- -->
+             <div class="form">
+                <h3>Add Restaurant</h3>
+                <br>
+                <form action="{% url 'add_restaurant' %}" method="POST">
+                    {% csrf_token %} 
+                    <label>Restaurant Name: </label>
+                    <input type="text" name='name'>
+                    <br><br>
+
+                    <label>Restaurant Picture: </label>
+                    <input type="text" name='picture'>
+                    <br><br>
+
+                    <label>Resturant Cusine: </label>
+                    <input type="text" name='cusine'>
+                    <br><br>
+
+                    <label>Restaurant Rating: </label>
+                    <input type="text" name='rating'>
+                    <br><br>
+
+                    <button type="submit">Add Now</button>
+                    <br><br>
+    </form>
+             </div>
+
+             <!-- -------------------- final image ---------------------- -->
+             <div class="chief2">
+                <img src="{%static 'pictures/signUpRight.png'%}">
+                <div class="caption2">
+                    Don’t worry: Get onto it now
+                </div>
+             </div>
+        </div>
+    </div>   
+
+        {% if messages %}
+        <script>
+            // {% for message in messages %}
+                alert("{{message}}");
+            // {% endfor %}
+        </script>
+    {% endif %}
+</body>
+</html>

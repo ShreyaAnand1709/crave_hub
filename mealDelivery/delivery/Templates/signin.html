@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH-SignIn</title>
+    <link rel="stylesheet" href="{% static 'signInstyle.css' %}?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>CraveHub</h1>
+        </div>
+
+        <div class="bodies">
+            <div class="left">
+                <img src="{%static 'pictures/signin_chief-removebg-preview.png' %}">
+            </div>
+            <div class="chief-text">
+                You're already with us<br> Just Sign in
+            </div>
+            <div class="right">
+                <div class="right_body">
+                <h1>Sign In below</h1>
+                <form method="post" action="{% url 'signin' %}" class="form">
+                    {% csrf_token %} 
+
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Enter your name">
+                    <br><br>
+
+                    <label>Password</label>
+                    <input type="text" name="password" placeholder="Enter your password">
+                    <br><br>
+
+                    <button type="submit" id="signbtn">SIGN IN</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    {% if messages %}
+        <script>
+            // {% for message in messages %}
+                alert("{{message}}");
+            // {% endfor %}
+        </script>
+    {% endif %}
+</body>
+</html>

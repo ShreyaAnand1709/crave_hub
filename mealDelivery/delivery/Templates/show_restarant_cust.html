@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurants</title>
+    <link rel="stylesheet" href="{% static 'restaurants.css' %}">
+</head>
+<body>
+
+<h1 class="page-title">🍴 Available Restaurants</h1>
+
+<div class="restaurant-container">
+
+    {% for r in restaurant %}
+    <div class="restaurant-card">
+
+        <img src="{{ r.picture }}" alt="{{ r.name }}">
+
+        <div class="restaurant-info">
+            <h2>{{ r.name }}</h2>
+            <p class="rating">⭐ Rating: {{ r.rating }}</p>
+
+            <a href="{% url 'place_order' r.id %}" class="menu-btn">
+                Show Menu
+            </a>
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

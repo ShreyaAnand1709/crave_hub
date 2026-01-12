@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #ff7043, #ff5722);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    width: 90%;
+    max-width: 900px;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Logo */
+.logo {
+    width: 120px;
+    animation: drop 1s ease;
+}
+
+/* Text */
+.title {
+    margin-top: 15px;
+    font-size: 34px;
+    color: #ff5722;
+}
+
+.subtitle {
+    margin: 12px 0 20px;
+    color: #555;
+    font-size: 16px;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.feature {
+    background: #fff3e0;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff5722;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Chefs */
+.chef-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 25px 0;
+}
+
+.chef {
+    width: 180px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.chef-left { animation-delay: 0s; }
+.chef-right { animation-delay: 1.5s; }
+
+/* Description */
+.description {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+/* Button */
+.restaurant-btn {
+    display: inline-block;
+    background: #ff5722;
+    color: white;
+    padding: 15px 35px;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.restaurant-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes drop {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}

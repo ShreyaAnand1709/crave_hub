@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Delivery</title>
+    <link rel="stylesheet" href="{% static 'custHomeStyle.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Logo -->
+    <img src="{% static 'pictures/logo.png' %}" class="logo" alt="Meal Delivery Logo">
+
+    <!-- Main Heading -->
+    <h1 class="title">Welcome to Meal Delivery</h1>
+    <p class="subtitle">
+        Your favourite food, cooked with love and delivered at your doorstep 🍲
+    </p>
+
+    <!-- Features -->
+    <div class="features">
+        <div class="feature">
+            🍽️ <span>Multiple Restaurants</span>
+        </div>
+        <div class="feature">
+            🚀 <span>Fast Delivery</span>
+        </div>
+        <div class="feature">
+            ❤️ <span>Fresh & Hygienic Food</span>
+        </div>
+    </div>
+
+    <!-- Chef Images -->
+    <div class="chef-container">
+        <img src="{% static 'pictures/signUpLeft.png' %}" class="chef chef-left">
+        <img src="{% static 'pictures/signUpRight.png' %}" class="chef chef-right">
+    </div>
+
+    <!-- Description -->
+    <p class="description">
+        Choose from a wide variety of cuisines prepared by expert chefs.  
+        From traditional meals to modern flavours — we’ve got it all!
+    </p>
+
+    <!-- Button -->
+    <a href="{% url 'show_restaurant_cust' %}"> restaurants</a>
+        Explore Restaurants 🍴
+    </a>
+
+</div>
+
+</body>
+</html>

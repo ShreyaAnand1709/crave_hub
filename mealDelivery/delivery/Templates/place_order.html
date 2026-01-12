@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="{% static 'menu.css' %}">
+</head>
+<body>
+
+<h1 class="page-title">🍽️ Our Menu</h1>
+
+<div class="menu-container">
+
+    {% for i in items %}
+    <div class="menu-card">
+
+        <img src="{{ i.picture }}" alt="{{ i.name }}">
+
+        <div class="menu-content">
+            <h2>{{ i.name }}</h2>
+            <p class="description">{{ i.description }}</p>
+
+            {% if i.veg %}
+                <span class="badge veg">VEG</span>
+            {% else %}
+                <span class="badge nonveg">NON-VEG</span>
+            {% endif %}
+
+            <div class="price-cart">
+                <span class="price">₹ {{ i.price }}</span>
+                <a href="{% url 'add_to_cart' i.id %}" class="cart-btn">
+                    Add to Cart
+                </a>
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

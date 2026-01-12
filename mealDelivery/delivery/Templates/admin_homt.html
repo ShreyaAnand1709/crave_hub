@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH-Admin</title>
+    <link rel="stylesheet" href="{% static 'adminHomeStyle.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- ----------------------navigation------------------- -->
+        <div class="nav">
+            <img class="logo" src="{% static 'pictures/logo.png' %}">
+
+            <h1>Crave Hub Admin</h1>
+
+            <button class="logout"><a href="">Log Out</a></button>
+        </div>
+
+        <!-- ----------------------------content----------------- -->
+         <div class="content">
+            <p>Welcome back, Admin<br> 
+               Manage restaurants and platform activity</p>
+         </div>
+
+         <!-- ------------------------------menu--------------------- -->
+          <div class="menus">
+
+            <div class="add_rest">
+                <h3>ADD RESTAURANTS</h3>
+                <p>Register a restaurant on CraveHub and <br>
+                   start serving customers across the platform.</p>
+                <button class="menubtn"><a href="{% url 'add_rest' %}">ADD</a></button>
+            </div>
+
+            <div class="view_rest">
+                <h3>VIEW RESTAURANTS</h3>
+                <p>Browse, manage, and update all <br>
+                   restaurants registered on CraveHub.</p>
+                <button class="menubtn"><a href="{% url 'show_restaurant' %}"> VIEW</a></button>
+            </div>
+          </div>
+    </div>
+</body>
+</html>

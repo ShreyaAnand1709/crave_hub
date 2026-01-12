@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH-SignUp</title>
+    <link rel="stylesheet" href="{% static 'signUpstyle.css' %}?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero">
+        <!-- <-------- Name of the app ------> 
+        <div class="heading">
+            <h1>CraveHub</h1>    
+        </div>
+
+        <!-- --------------lower section of app for sign in---------------- -->
+        <div class="body">
+            <!-- ------------------ first image ------------------- -->
+             <div class="chief1">
+                <img src= "{%static 'pictures/signUpLeft.png' %}">
+                <div class="caption1">
+                    Oops! First time here?
+                </div>
+             </div>
+
+             <!-- --------------------- form -------------------- -->
+             <div class="form">
+                <h3>Sign Up</h3>
+                <form action="{% url 'signup' %}" method="post" >
+                    {% csrf_token %}
+                    <label>Username</label>
+                    <input type="text" name="username" >
+                    <br><br>
+
+                    <label>Password</label>
+                    <input type="text" name="password">
+                    <br><br>
+
+                    <label>Email</label>
+                    <input type="text" name="email">
+                    <br><br>
+
+                    <label>Mobile</label>
+                    <input type="text" name="mobile">
+                    <br><br>
+
+                    <label>Address</label>
+                    <input type="text" name="address">
+                    <br><br>
+
+                    <button type="submit">SIGN UP</button>
+                </form>
+             </div>
+
+             <!-- -------------------- final image ---------------------- -->
+             <div class="chief2">
+                <img src="{%static 'pictures/signUpRight.png'%}">
+                <div class="caption2">
+                    Don’t worry: signing up takes just a moment.
+                </div>
+             </div>
+        </div>
+    </div>   
+</body>
+</html>

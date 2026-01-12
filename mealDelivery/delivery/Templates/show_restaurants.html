@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH-View</title>
+    <link rel="stylesheet" href="{% static 'showRestStyle.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <!-- ---------------------------nav---------------------- -->
+         <div class="nav">
+            <img src="{% static 'pictures/logo.png' %}" alt="picture" class="logo">
+            <h1>CraveHub</h1>
+            <button class="logout">LogOut</button>
+         </div>
+
+         <!-- ---------------------------------content----------------------- -->
+         <div class="content">
+            <h2>View Restaurants</h2>
+            <p>Browse . Manage . Partner Up</p>
+         </div>
+
+         <!-- ------------------------------------restaurants card-------------------- -->
+          <div class="cards">
+            {% for r in restaurant %}
+            <div class="card11">  
+                <div class="card1">
+                    {% if r.picture %}
+                        <img src="{{r.picture}}" alt="{{r.name}}" class="card1img">
+                    {% else %}
+                        <img src = "{% static 'pictures/generalRest.jpeg' %}" alt="image" class="card1img">
+                    {% endif %}
+                </div>
+                <div class="card1Content">
+                    <h3>Name: {{ r.name}}</h3>
+                    <p>⭐ {{r.rating}}</p>
+                    <p>🍽️ {{ r.cusine}}</p>
+                </div>
+                <div class="updates">
+                    <button class="udt"><a href="{% url 'update_restaurant_info' r.id %}">update restaurant info</a></button><br>
+                    <button class="udt"><a href="{% url 'delete_rest' r.id %}">delete restaurant</a></button><br>
+                    <button class="udt"><a href="{% url 'update_menu' r.id %}">update menu</a></button>
+                </div>
+            </div>
+            {% endfor %} 
+          </div>
+    </div>
+</body>
+</html>

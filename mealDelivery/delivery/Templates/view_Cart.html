@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="{% static 'cart.css' %}">
+</head>
+<body>
+
+<div class="cart-wrapper">
+
+    <h1>🛒 Your Cart</h1>
+
+    {% if cart_items %}
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price (₹)</th>
+                <th>Quantity</th>
+                <th>Total (₹)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ci in cart_items %}
+            <tr>
+                <td>{{ ci.item.name }}</td>
+                <td>{{ ci.item.price }}</td>
+                <td>{{ ci.quantity }}</td>
+                 <td>₹ {{ ci.total_price }}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="cart-summary">
+        <h2>Total Price: ₹ {{ total_price }}</h2>
+        <a href="{% url 'checkout' username %}" class="checkout-btn">
+            Proceed to Checkout
+        </a>
+    </div>
+
+    {% else %}
+        <p class="empty-cart">Your cart is empty 😕</p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

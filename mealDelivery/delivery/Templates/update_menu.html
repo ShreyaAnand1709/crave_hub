@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'updateMenu.css' %}?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- -------------------------navigation-------------------- -->
+         <div class="nav">
+            <img src="{% static 'pictures/logo.png' %}" alt="picture" class="logo">
+            <h1>CraveHub</h1>
+            <button class="logout">LogOut</button>
+         </div>
+
+         <!-- ------------------------------content--------------------- -->
+          <div class="content">
+            <h3>Update Menu</h3>
+            <p>Tell us whats new in your menu.</p>
+         </div>
+
+         <!-- ---------------------------------form and pictures -----------------------  -->
+          <!-- ------------------ first image ------------------- -->
+        <div class="body">
+             <div class="chief1">
+                <img src= "{%static 'pictures/signUpLeft.png' %}">
+                <div class="caption1">
+                    Yueah! whats new ? 
+                </div>
+             </div>
+
+             <!-- --------------------- form -------------------- -->
+             <div class="form">
+                <h3>Update Menu</h3>
+                <form action="{% url 'updating_menu' restaurant.id %}" method="POST">
+        {% csrf_token %}
+        <label> Cuisine Name: </label>
+        <input type="text" name='cname'>
+        <br><br>
+
+        <label>Description: </label>
+        <input type="text" name='description'>
+        <br><br>
+
+        <label>Price: </label>
+        <input type="text" name='price'>
+        <br><br>
+
+        <label>Veg: </label>
+        <div class="radio-group">
+    <label>
+        <input type="radio" name="veg" value="True"> Veg
+    </label>
+    <label>
+        <input type="radio" name="veg" value="False"> Non Veg
+    </label>
+</div>
+
+        <label>Picture: </label>
+        <input type="text" name='picture'>
+        <br><br>
+
+        <button type="submit">Update Menu</button>
+        <br><br>
+        <table border="1">
+    </form>
+             </div>
+
+             <!-- -------------------- final image ---------------------- -->
+             <!-- <div class="chief2">
+                <img src="{%static 'pictures/signUpRight.png'%}">
+                <div class="caption2">
+                    Update it here
+                </div>
+            </div> -->
+        </div>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+

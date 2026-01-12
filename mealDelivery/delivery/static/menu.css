@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+    padding: 30px;
+}
+
+/* Page title */
+.page-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #ff5722;
+}
+
+/* Grid layout */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Card */
+.menu-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* Image */
+.menu-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Content */
+.menu-content {
+    padding: 18px;
+}
+
+.menu-content h2 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+/* Veg / Non-veg badge */
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.veg {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.nonveg {
+    background: #fdecea;
+    color: #c62828;
+}
+
+/* Price & button */
+.price-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.cart-btn {
+    text-decoration: none;
+    background: #ff5722;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.cart-btn:hover {
+    background: #e64a19;
+}

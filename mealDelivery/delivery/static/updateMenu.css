@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ---------- PAGE ---------- */
+.container {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(120deg, #fff1eb, #ffdde1);
+}
+
+/* ---------- NAV ---------- */
+.nav {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+.logout {
+    width: 90px;
+    height: 34px;
+    border-radius: 12px;
+    background: orangered;
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.logout:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* ---------- HEADER ---------- */
+.content {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.content h3 {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.content p {
+    font-size: 18px;
+    margin-top: 6px;
+    opacity: 0.85;
+}
+
+/* ---------- MAIN BODY ---------- */
+.body {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    padding: 20px;
+}
+
+/* ---------- CHEF BLOCKS ---------- */
+.chief1,
+.chief2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.chief1 img,
+.chief2 img {
+    width: 260px;
+    height: auto;
+}
+
+/* ---------- SPEECH BUBBLES ---------- */
+.caption1,
+.caption2 {
+    position: absolute;
+    top: -25px;
+    padding: 8px 14px;
+    width: 190px;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 12px;
+    color: white;
+}
+
+/* Left chef bubble */
+.caption1 {
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(214, 92, 67);
+    animation: popin 1.6s ease-out forwards;
+}
+
+/* Right chef bubble */
+/* .caption2 {
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(223, 105, 97);
+    animation: bounce1 1.4s ease-out forwards;
+} */
+
+/* ---------- FORM CARD ---------- */
+.form {
+    width: 420px;
+    background-color: rgba(199, 62, 12, 0.65);
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form h3 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.form label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form input[type="text"] {
+    width: 100%;
+    height: 34px;
+    border-radius: 6px;
+    border: none;
+    padding: 6px 8px;
+}
+
+/* ---------- RADIO GROUP ---------- */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+/* ---------- BUTTON ---------- */
+.form button {
+    margin-top: 12px;
+    height: 38px;
+    border-radius: 12px;
+    border: none;
+    background-color: orangered;
+    color: white;
+    font-weight: 600;
+}
+
+.form button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes popin {
+    0% {
+        transform: translateX(-50%) scale(0.6);
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(-50%) scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@keyframes bounce1 {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
